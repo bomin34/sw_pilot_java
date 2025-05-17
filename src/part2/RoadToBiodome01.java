@@ -38,17 +38,10 @@ public class RoadToBiodome01 {
         }
 
         // 한 번만 등장한 숫자 찾기
-        boolean found = false;
         for (int num : numbers) {
             if (count[num] == 1) {
                 System.out.println(num);
-                found = true;
-                break;
             }
-        }
-
-        if (!found) {
-            System.out.println("한 번만 등장하는 숫자가 없습니다.");
         }
     }
 }
