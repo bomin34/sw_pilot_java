@@ -1,3 +1,6 @@
+// HashMap의 핵심 원리 구현을 해야됨
+// Entry<K, V>[] table: 배열 직접 생성, getIndex()로 인덱스 직접 계산
+// put(), get(), remove() 전부 직접 구현
 class PlantHashMap<K, V> {
     // HashMap 동작 방식 : 배열 처럼 생긴 저장소 생성
     private Entry<K, V>[] table;
