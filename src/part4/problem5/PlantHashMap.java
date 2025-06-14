@@ -8,7 +8,7 @@ class PlantHashMap<K, V> {
         table = new Entry[16];  // 고정 크기
     }
 
-    // 내부 클래스: 키와 값을 저장하는 구조
+    // 내부 클래스 : 키와 값을 저장하는 구조
     // HashMap 클래스 안에서만 사용하는 것이므로 static으로 선언
     static class Entry<K, V> {
         K key;
@@ -22,14 +22,14 @@ class PlantHashMap<K, V> {
 
     // 해시코드로 인덱스 구하기
     // key를 HashCode로 정수로 변환하고 배열 크기로 나누어 인덱스 계산 -> 항상 0~15 사이의 값
-    // "장미"의 hashCode()가 12345라고 하면 → 12345 % 16 = 5 → index 5
+    // 예를들어, "장미"의 hashCode()가 12345라고 하면 → 12345 % 16 = 5 → index 5
     public int getIndex(K key) {
         return Math.abs(key.hashCode()) % 16;
     }
 
-    // put : 추가 (덮어쓰고 체이닝 하지 않음)
+    // put : 추가
     // key에 해당하는 인덱스를 계산하고 해당 위치에 새 Entry 저장
-    // 이미 값이 있어도 그냥 덮어쓰기
+    // 이미 값이 있어도 그냥 덮어쓰기를 함(?)
     public void put(K key, V value) {
         int index = getIndex(key);
         table[index] = new Entry<>(key, value);
@@ -41,15 +41,7 @@ class PlantHashMap<K, V> {
     public void get(K key) {
         int index = getIndex(key);
         Entry<K, V> entry = table[index];
-        if (entry != null && entry.key.equals(key)) {
-            System.out.println("'" + key + "' 검색 : '" + entry.value + "'");
-        } else {
-            System.out.println("'" + key + "'를 찾을 수 없습니다.");
-        }
-    }
-
-    // remove : 삭제
-    // key로 인덱스를 계산한 뒤, 맞는 데이터가 있으면 null로 지움
+        if (en기
     public void remove(K key) {
         int index = getIndex(key);
         Entry<K, V> entry = table[index];
